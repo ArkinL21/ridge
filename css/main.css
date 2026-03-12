@@ -52,15 +52,51 @@ section h2 {
   width: auto;
 }
 
+/* ===== NAVIGATION ===== */
 .site-nav a {
   margin-left: 20px;
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+  color: var(--gold-primary);
+}
+
+/* underline animation */
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+
+.site-nav a:hover::after {
+  width: 100%;
 }
 
 .site-nav a.active {
   color: var(--gold-primary);
+}
+
+/* highlighted booking button in nav */
+.site-nav .book-btn {
+  background: var(--gold-primary);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 25px;
+}
+
+.site-nav .book-btn:hover {
+  background: var(--gold-soft);
+  color: black;
 }
 
 /* ===== HERO SECTION ===== */
@@ -83,6 +119,15 @@ section h2 {
   max-width: 450px;
   height: auto;
   border-radius: var(--radius);
+  transition: transform 0.4s ease;
+}
+
+/* image hover polish */
+.hero-img:hover,
+.story-image img:hover,
+.team-member img:hover,
+.services-grid div img:hover {
+  transform: scale(1.03);
 }
 
 /* ===== GRID LAYOUTS ===== */
@@ -127,12 +172,13 @@ section h2 {
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   background: var(--gold-soft);
   color: black;
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -144,12 +190,13 @@ section h2 {
   text-decoration: none;
   color: var(--gold-primary);
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
   background: var(--gold-primary);
   color: white;
+  transform: translateY(-2px);
 }
 
 /* ===== BOOKING FORM ===== */
@@ -293,6 +340,7 @@ section h2 {
     margin-right: 15px;
   }
 }
+
 /* ===== GALLERY SLIDESHOW ===== */
 .gallery-slideshow {
   padding: 50px 10%;
@@ -304,7 +352,8 @@ section h2 {
   position: relative;
   max-width: 800px;
   margin: 40px auto;
-  height: auto; aspect-ratio: 16/9;
+  height: auto;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: 0 8px 25px rgba(0,0,0,0.05);
@@ -350,6 +399,7 @@ section h2 {
 .slideshow-container .prev { left: 10px; }
 .slideshow-container .next { right: 10px; }
 
+/* ===== SCROLL ANIMATION ===== */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
