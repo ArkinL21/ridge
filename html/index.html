@@ -17,11 +17,15 @@ href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet"/>
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
 
+<!-- Top Contact Bar -->
 <div class="top-contact">
 <div class="contact-container">
 <span>Business email coming soon</span>
@@ -29,33 +33,34 @@ rel="stylesheet"/>
 </div>
 </div>
 
+
+<!-- Header -->
 <header class="site-header">
-  <div class="inner">
+<div class="inner">
 
-    <div class="brand">
-      <img src="../img/logo.jpeg" alt="Ridge Dental Logo" class="site-logo">
-    </div>
+<div class="brand">
+<img src="../img/logo.jpeg" alt="Ridge Dental Logo" class="site-logo">
+</div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-      ☰
-    </button>
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+☰
+</button>
 
-    <nav class="site-nav" id="siteNav">
-       <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="booking.html" class="book-btn">Book Online</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-  </div>
-</header>
+<nav class="site-nav" id="siteNav">
+<a class="active" href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="booking.html" class="book-btn">Book Online</a>
+<a href="contact.html">Contact</a>
+</nav>
 
 </div>
 </header>
 
+
 <main>
 
+<!-- Hero Section -->
 <section class="hero">
 
 <div class="hero-content">
@@ -63,7 +68,7 @@ rel="stylesheet"/>
 <h1>Smile for Miles</h1>
 
 <p>
-Comfort. Health. A smile you're confident in
+Comfort. Health. A smile you're confident in.
 </p>
 
 <a href="booking.html" class="btn-primary">Book Appointment</a>
@@ -77,6 +82,7 @@ Comfort. Health. A smile you're confident in
 </section>
 
 
+<!-- About Preview -->
 <section class="about-preview">
 
 <h2>We are excited to welcome you to Ridge Dental Practice</h2>
@@ -97,7 +103,9 @@ orthodontics, and prosthetics.
 </section>
 
 
+<!-- Gallery Slideshow -->
 <section class="gallery-slideshow">
+
 <div class="slideshow-container">
 
 <img src="../img/logo.jpeg" alt="Ridge Dental Practice image 1" class="slide">
@@ -109,29 +117,28 @@ orthodontics, and prosthetics.
 <a class="next">&#10095;</a>
 
 </div>
+
 </section>
 
-<!-- Gallery Section -->
 
+<!-- Gallery Section -->
 <section class="gallery-section">
 
 <h2>Our Gallery</h2>
-
-
 
 <div class="gallery-grid">
 
 <img src="../img/clinic3.jpeg" alt="Ridge Dental gallery image 1">
 <img src="../img/dentist-2.jpg" alt="Ridge Dental gallery image 2">
 <img src="../img/dentist-1.jpg" alt="Ridge Dental gallery image 3">
-<img src="../img/dentist-3.jpg" alt="Ridge Dental gallery image 3">
+<img src="../img/dentist-3.jpg" alt="Ridge Dental gallery image 4">
 
 </div>
 
 </section>
 
-<!-- News & Events -->
 
+<!-- News & Events -->
 <section class="news-section">
 
 <h2>News & Upcoming Events</h2>
@@ -170,6 +177,7 @@ Follow our latest announcements, new services, and technology upgrades.
 </section>
 
 
+<!-- Services Preview -->
 <section class="services-preview">
 
 <h2>Our Services</h2>
@@ -195,7 +203,7 @@ improve your smile.
 </div>
 
 <div class="service-card">
-<span class="material-icons">straighten</span>
+<span class="material-icons">align_horizontal_left</span>
 <h3>Orthodontics</h3>
 <p>
 Braces and clear aligners to help straighten and align your teeth.
@@ -203,7 +211,7 @@ Braces and clear aligners to help straighten and align your teeth.
 </div>
 
 <div class="service-card">
-<span class="material-icons">dentistry</span>
+<span class="material-icons">health_and_safety</span>
 <h3>Prosthodontics</h3>
 <p>
 Fixed and removable dentures to restore missing teeth and improve confidence.
@@ -225,6 +233,7 @@ Extractions and minor surgical procedures carried out with care and precision.
 </section>
 
 
+<!-- Why Choose Us -->
 <section class="why-us">
 
 <h2>Why Choose Us</h2>
@@ -288,6 +297,7 @@ We are dedicated to building trust and providing ongoing support for your oral h
 </section>
 
 
+<!-- Location -->
 <section class="location">
 
 <h2>Visit Our Practice</h2>
@@ -315,6 +325,7 @@ loading="lazy">
 </section>
 
 
+<!-- CTA -->
 <section class="cta">
 
 <h2>Ready for Your Next Check-Up?</h2>
@@ -328,6 +339,7 @@ loading="lazy">
 </main>
 
 
+<!-- Footer -->
 <footer class="footer">
 
 <div class="footer-container">
@@ -356,31 +368,48 @@ Namibia
 
 </footer>
 
+
+<!-- Floating Book Button -->
 <a href="booking.html" class="floating-book">
 Book Appointment
 </a>
 
-<script src="../js/main.js"></script>
 
+<!-- Floating Social Buttons -->
 <div class="social-floating">
 
-<a href="https://wa.me/264812316991" target="_blank" class="social-btn whatsapp">
-W
+<a href="https://wa.me/264812316991"
+target="_blank"
+rel="noopener noreferrer"
+class="social-btn whatsapp">
+<i class="fab fa-whatsapp"></i>
 </a>
 
-<a href="https://www.instagram.com/ridgedentalgroup_namibia?igsh=aHkweHRyZDVyMWl2&utm_source=qr" target="_blank" class="social-btn instagram">
-I
+<a href="https://www.instagram.com/ridgedentalgroup_namibia?igsh=aHkweHRyZDVyMWl2&utm_source=qr"
+target="_blank"
+rel="noopener noreferrer"
+class="social-btn instagram">
+<i class="fab fa-instagram"></i>
 </a>
 
-<a href="#" target="_blank" class="social-btn facebook">
-F
+<a href="https://www.facebook.com/share/1E3HY2KshY/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener noreferrer"
+class="social-btn facebook">
+<i class="fab fa-facebook-f"></i>
 </a>
 
-<a href="#" target="_blank" class="social-btn linkedin">
-L
+<a href="https://linkedin.com"
+target="_blank"
+rel="noopener noreferrer"
+class="social-btn linkedin">
+<i class="fab fa-linkedin-in"></i>
 </a>
 
 </div>
+
+
+<script src="../js/main.js"></script>
 
 </body>
 </html>

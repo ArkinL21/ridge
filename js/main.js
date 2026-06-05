@@ -3,12 +3,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===============================
   // 1. Mobile Menu Toggle
   // ===============================
+
   const menuToggle = document.getElementById("menuToggle");
   const siteNav = document.getElementById("siteNav");
 
   if (menuToggle && siteNav) {
-    menuToggle.addEventListener("click", () => {
+
+    menuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+
       siteNav.classList.toggle("show");
+
+      if (siteNav.classList.contains("show")) {
+        menuToggle.textContent = "×";
+      } else {
+        menuToggle.textContent = "☰";
+      }
+    });
+
+    // Close menu when clicking a nav link
+    const navLinks = document.querySelectorAll('.site-nav a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove("show");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (event) => {
+      if (
+        siteNav.classList.contains("show") &&
+        !siteNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        siteNav.classList.remove("show");
+        menuToggle.textContent = "☰";
+      }
     });
   }
 
@@ -16,9 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===============================
   // 2. Gallery Slideshow
   // ===============================
+
   const slides = document.querySelectorAll('.slideshow-container img.slide');
   const prevBtn = document.querySelector('.slideshow-container .prev');
   const nextBtn = document.querySelector('.slideshow-container .next');
+
   let index = 0;
   let autoSlide;
 
@@ -40,21 +74,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (slides.length > 0) {
     showSlide(index);
-    autoSlide = setInterval(nextSlide, 4000);
+
+    if (slides.length > 1) {
+      autoSlide = setInterval(nextSlide, 4000);
+    }
 
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         nextSlide();
-        clearInterval(autoSlide);
-        autoSlide = setInterval(nextSlide, 4000);
+
+        if (autoSlide) {
+          clearInterval(autoSlide);
+          autoSlide = setInterval(nextSlide, 4000);
+        }
       });
     }
 
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
         prevSlide();
-        clearInterval(autoSlide);
-        autoSlide = setInterval(nextSlide, 4000);
+
+        if (autoSlide) {
+          clearInterval(autoSlide);
+          autoSlide = setInterval(nextSlide, 4000);
+        }
       });
     }
   }
@@ -63,12 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===============================
   // 3. Smooth Scroll for Anchor Links
   // ===============================
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+
       const href = this.getAttribute('href');
 
-      if (href.startsWith('#')) {
+      if (href && href.startsWith('#') && href.length > 1) {
         e.preventDefault();
+
         const target = document.querySelector(href);
 
         if (target) {
@@ -83,30 +129,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ===============================
-  // 4. Close Mobile Menu After Click
+  // 4. Scroll Animations
   // ===============================
-  const navLinks = document.querySelectorAll('.site-nav a');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (siteNav && siteNav.classList.contains('show')) {
-        siteNav.classList.remove('show');
-      }
-    });
-  });
-
-
-  // ===============================
-  // 5. Scroll Animations
-  // ===============================
   const animateElements = document.querySelectorAll('.animate-on-scroll');
 
   if (animateElements.length > 0) {
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
+
       });
     }, { threshold: 0.1 });
 
